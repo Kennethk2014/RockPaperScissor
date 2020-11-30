@@ -27,7 +27,7 @@
 
 
        
-        let playerSelection;
+        let playerSelection = "";
     
         rockImg.value = "rock";
         paperImg.value = "paper";
@@ -53,7 +53,34 @@
             }
         }
 
-        function game(){
+     function playerClick (playerSelection, handOption){
+         
+     }
+     
+     
+     
+     
+        const handOption = document.querySelectorAll('.hand-option');
+      handOption.forEach((handOption) => {
+        handOption.addEventListener('click', (playerSelection, computerSelection,) => {
+    
+            if(playerSelection === computerSelection){
+                console.log("You just Tied to a bot!")
+            }else if((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "paper")){
+                console.log("Amazing, you just crushed the bot!")
+            }else{
+                console.log("You lost! Daaamn ,try again.")
+            }
+            
+        })    
+    })
+          
+      
+      
+        game()
+      
+      
+        /*  function game(){
             for(let i = 0; i <= 5; i++){
             let computerSelection = computerPlay();
             let playerRPS= prompt("Help us defeat the boss, we need you to pick Rock, Paper or Scissors");
@@ -61,5 +88,5 @@
             console.log(playRound(playerSelection, computerSelection));			
             }   
         }
-    
-        game()
+    */
+      
