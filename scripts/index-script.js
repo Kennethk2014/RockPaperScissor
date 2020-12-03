@@ -19,7 +19,7 @@ container.appendChild(scoreDiv);
 
 const playerScorePara = document.createElement('p');
     playerScorePara.classList.add('playerScorePara');
-    playerScorePara.textContent = "Player:"
+    playerScorePara.textContent = "Player Score:"
 scoreDiv.appendChild(playerScorePara);
 
 
@@ -29,7 +29,7 @@ playerScorePara.appendChild(playerScore_span);
 
 const computerScorePara = document.createElement('p');
     computerScorePara.classList.add('computerScorePara');
-    computerScorePara.textContent = "Computer:"
+    computerScorePara.textContent = "Computer Score:"
 scoreDiv.appendChild(computerScorePara);
 
 let computerScore_span = document.createElement('span');
@@ -43,18 +43,21 @@ computerScorePara.appendChild(computerScore_span)
 const rockBtn = document.createElement('input');
     rockBtn.setAttribute('type', 'button');
     rockBtn.value = "Rock";
+    rockBtn.classList.add('rockBtn')
 content.appendChild(rockBtn)
 
 //Creating the button for Paper Value
 const paperBtn = document.createElement('input');
     paperBtn.setAttribute('type', 'button');
     paperBtn.value = "Paper";
+    paperBtn.classList.add('paperBtn')
 content.appendChild(paperBtn);
 
 //Creating the button for Scissors Value
 const scissorsBtn = document.createElement('input');
     scissorsBtn.setAttribute('type', 'button');
     scissorsBtn.value = "Scissors";
+    scissorsBtn.classList.add('scissorsBtn')
 content.appendChild(scissorsBtn);
 
 // Getting every button 
