@@ -89,12 +89,17 @@ let win = (userChoice, computerChoice) => {
     `     
 }
 
-let loss = () => {
+let loss = (userChoice, computerChoice) => {
     ++computerScore
-    computerScore_span.textContent = ` ${computerScore}`;  
+    computerScore_span.textContent = ` ${computerScore}`;
+    choiceOutput.innerHTML = `
+        ${userChoice} loses to ${computerChoice}, You Loooose! :-(
+    `       
 }
-let draw = () => {
-    
+let draw = (userChoice, computerChoice) => {
+    choiceOutput.innerHTML = `
+    ${userChoice} draws to ${computerChoice}...
+`       
 }
 
 
@@ -104,13 +109,14 @@ let gameLogic = (userChoice) => {
     let computerChoice = getComputerChoice()
     
     if(userChoice === computerChoice){
-        console.log("It's a Draw!");
+        console.log("It's a Draw!")
+        draw(userChoice, computerChoice)
     }else if(userChoice === "Rock" && computerChoice === "Paper" || userChoice === "Paper" && computerChoice === "Scissors" || userChoice === "Scissors" && computerChoice === "Rock"){
         console.log("You Lost!")
-        loss()
+        loss(userChoice, computerChoice)
     }else if(userChoice === "Rock" && computerChoice === "Scissors" || userChoice === "Paper" && computerChoice === "Rock" || userChoice === "Scissors" && computerChoice === "Paper"){
         console.log("You Win!")
-        win();
+        win(userChoice, computerChoice);
     }
 }
 
